@@ -1,0 +1,102 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+        <div class="white-section">
+          <div class="login">
+            <div class="section">
+              <!-- <i class="fa-regular fa-envelope"></i> -->
+              <i class="fa-regular fa-envelope"></i>
+              <input
+                type="text"
+                name="user_name"
+                placeholder="Enter Email Address"
+                class="mail"
+              />
+            </div>
+            <br />
+            <div class="section">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                class="password"
+              />
+            </div>
+            <p class="login-link">
+              <button onclick="return validateform()" class="login-button">
+                Login
+              </button>
+            </p>
+            <div class="login1">
+              <h4>
+                  -----Login with-----
+              </h4>
+              <div class="images">
+                  <i class="fa-brands fa-google" style="font-size: 1.8em;"></i>
+                  <i class="fa-brands fa-facebook" style="font-size: 1.8em;"></i>
+                  <i class="fa-brands fa-instagram" style="font-size: 1.8em;"></i>
+              </div>
+            </div>
+            <p class="register-link">
+              Don't have an account? <a href="register.html" >Sign up</a>
+            </p>
+          </div>
+          <div class="content">
+
+          </div>
+        </div>
+    
+    <script>
+      function register() {
+        window.location.href = "register.html";
+      }
+      function login() {
+        window.location.href = "main.html";
+      }
+
+      function loginUser(username, password) {
+        if (username && password) {
+          const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+          const user = existingUsers.find((u) => u.username === username);
+
+          if (user && user.password === password) {
+            login();
+          } else {
+            alert("Invalid username or password. Please try again.");
+          }
+        } else {
+          alert("Please fill in all fields.");
+        }
+      }
+
+      function validateform() {
+        var user_name = document.getElementsByName("user_name")[0].value;
+        var password = document.getElementsByName("password")[0].value;
+
+        if (user_name == null || user_name == "") {
+          alert("Name can't be blank.");
+          return false;
+        } else if (password.length < 6) {
+          alert("Password must be at least 6 characters.");
+          return false;
+        } else {
+          loginUser(user_name, password);
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>
