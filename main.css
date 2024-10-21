@@ -1,0 +1,111 @@
+body{
+    background-color: #f5eded;
+}
+h1{
+    font-family:cursive;
+    font-style: italic;
+    font-size: 40px;
+    text-align: center;
+    color: darkslateblue;
+}
+p{
+    color: white;
+    font-size: 30px;
+    font-style: italic;
+    padding-top: 85%;
+}
+.imgs1,.imgs2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px 10px;
+    padding: 60px 60px 0px 60px;
+}
+.rainy,.spring,.winter,.autumn,.summer,.pre-winter{
+    width: 320px;
+    height: 400px;
+    /* flex-grow: 1; */
+    border-radius: 50px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 20px 20px 20px #807d7d;
+    /* justify-content: center; */
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.imgs1 .rainy {
+    animation-delay: 0s;
+}
+
+.imgs1 .autumn {
+    animation-delay: 1s;
+}
+
+.imgs1 .spring {
+    animation-delay: 2s;
+}
+
+.imgs2 .winter {
+    animation-delay: 3s;
+}
+
+.imgs2 .pre-winter {
+    animation-delay: 4s;
+}
+
+.imgs2 .summer {
+    animation-delay: 5s;
+}
+
+.rainy{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("rainy.jpg");
+}
+.pre-winter{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://www.stpaulrealestateblog.com/images/2017/11/IMG_2901ww.jpg");
+}
+.winter{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://miro.medium.com/v2/resize:fit:500/1*d__sP7jAuw0-N5RvcdRWXA.jpeg");
+}
+.summer{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://i.pinimg.com/736x/f2/cb/9f/f2cb9ff29b3897021a8a0f4caf7436c0.jpg");
+}
+.spring{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://wallpapers.com/images/featured/most-beautiful-spring-snc4sh07m7xgwbxx.jpg");
+}
+.autumn{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2014/10/autumn-photography-2-7__880.jpg");
+}
+/* img{
+    width: 250px;
+    height: 200px;
+    border-radius: 20px;
+} */
+.at{
+    color: rgb(42, 25, 82);
+    color: wblackite;
+    font-size: 30px;
+    font-style: italic;
+    font-style: bold;
+    padding-top: 85%;
+    font-weight: 800;
+}
